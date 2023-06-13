@@ -14,7 +14,7 @@ def rotateLine(x, y, theta):
 
 
 plotter.start()
-x1, y1, x2, y2 = 0, 0, 10, 5
+x1, y1, x2, y2 = 0, 0, 0, 15
 mydrawer.draw_bresenhams_line(plotter, x1, y1, x2, y2)
 
 x2, y2 = rotateLine(x2, y2, 30)

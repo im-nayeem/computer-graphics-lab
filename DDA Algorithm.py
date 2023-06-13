@@ -21,7 +21,7 @@ def drawLine(x1, y1, x2, y2):
 
 
 drawer.start()
-drawLine(0, 0, 5, 6)
+drawLine(5, 0, 3, 4)
 drawer.execute()
 
 

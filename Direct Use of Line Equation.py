@@ -28,4 +28,4 @@ x2 , y2 = map(int, input('Enter x2 and y2: ' ).split())
 drawer = pixeldrawer.PixelDrawer()
 drawer.start()
 drawLine(x1, y1, x2, y2)
-drawer.execute()0 2
+drawer.execute()
