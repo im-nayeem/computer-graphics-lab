@@ -15,10 +15,13 @@ def drawLine(x1, y1, x2, y2):
         drawer.draw_pixel(round(x), round(y))
         x = x + xinc
         y = y + yinc
+        
+        if(y > y2):
+            break;
 
 
 drawer.start()
-drawLine(0, 3, 10, 12)
+drawLine(0, 0, 5, 6)
 drawer.execute()
 
 
