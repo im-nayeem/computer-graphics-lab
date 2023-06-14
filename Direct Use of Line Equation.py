@@ -1,4 +1,4 @@
-from pixelplotter import pixeldrawer
+from pixelvisualizer import pixelplotter
 
 def drawLine(x1, y1, x2, y2):
     dx = x2 - x1
@@ -16,7 +16,7 @@ def drawLine(x1, y1, x2, y2):
         xend = x2
     
     while(True):
-        drawer.draw_pixel(round(x), round(y))
+        plotter.plot_pixel(round(x), round(y))
         x = x+1
         y = m * x + b
         if(x > xend):
@@ -25,7 +25,7 @@ def drawLine(x1, y1, x2, y2):
 x1 , y1 = map(int, input('Enter x1 and y1: ' ).split())
 x2 , y2 = map(int, input('Enter x2 and y2: ' ).split())
 
-drawer = pixeldrawer.PixelDrawer()
-drawer.start()
+plotter = pixelplotter.PixelPlotter()
+plotter.start()
 drawLine(x1, y1, x2, y2)
-drawer.execute()
+plotter.execute()

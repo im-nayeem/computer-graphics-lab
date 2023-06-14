@@ -1,11 +1,10 @@
-from pixelplotter import pixeldrawer
+from pixelvisualizer import pixelplotter
 
-
-def translate(drawer, coordinates, tx, ty):
+def translate(plotter, coordinates, tx, ty):
     for item in coordinates:
         item['x'] = item['x'] + tx
         item['y'] = item['y'] + ty
-        drawer.draw_pixel(item['x'], item['y'])
+        plotter.plot_pixel(item['x'], item['y'], plotter.RED)
 
 
      
@@ -19,16 +18,16 @@ def main():
     # translation vector [tx, ty]
     tx, ty = 5, 8 
 
-    drawer = pixeldrawer.PixelDrawer()
-    drawer.start()
+    plotter = pixelplotter.PixelPlotter()
+    plotter.start()
 
     # Before Translation
     for item in coordinates:
-        drawer.draw_pixel(item['x'], item['y'])
+        plotter.plot_pixel(item['x'], item['y'])
 
     # After Translation
-    translate(drawer, coordinates, tx, ty)
+    translate(plotter, coordinates, tx, ty)
     
-    drawer.execute()
+    plotter.execute()
 
 main()

@@ -1,6 +1,6 @@
-from pixelplotter import pixeldrawer
+from pixelvisualizer import pixelplotter
 
-def bresenhamsLineDrawing(drawer, x1, y1, x2, y2):
+def bresenhamsLineDrawing(plotter, x1, y1, x2, y2):
     x = x1
     y = y1
     dx = x2 - x1
@@ -17,7 +17,7 @@ def bresenhamsLineDrawing(drawer, x1, y1, x2, y2):
         p = c1 - dy
 
     while(x <= x2):
-        drawer.draw_pixel(x, y)
+        plotter.plot_pixel(x, y, plotter.BLUE)
         if(m < 1):
             if(p < 0):
                 p = p + c1
@@ -36,11 +36,8 @@ def bresenhamsLineDrawing(drawer, x1, y1, x2, y2):
                 p = p + c2
                 x = x + 1
                 y = y + 1
-            
 
-
-
-app = pixeldrawer.PixelDrawer()
-app.start()
-bresenhamsLineDrawing(app, -7, 10, 20, -4)
-app.execute()
+plotter = pixelplotter.PixelPlotter()
+plotter.start()
+bresenhamsLineDrawing(plotter, 0, 0, 5, 7)
+plotter.execute()

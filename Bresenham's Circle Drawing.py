@@ -1,19 +1,19 @@
-from pixelplotter import pixeldrawer
+from pixelvisualizer import pixelplotter
 
-def drawCircle(drawer, r, h, k):
+def drawCircle(plotter, r, h, k):
     d = 3 - 2 * r
     x = 0
     y = r
 
     while(x <= y):
-        drawer.draw_pixel(x+h , y+k)
-        drawer.draw_pixel(y+h , x+k)
-        drawer.draw_pixel(-y+h, x+k)
-        drawer.draw_pixel(-x+h, y+k)
-        drawer.draw_pixel(-x+h, -y+k)
-        drawer.draw_pixel(-y+h, -x+k)
-        drawer.draw_pixel(y+h, -x+k)
-        drawer.draw_pixel(x+h, -y+k)
+        plotter.plot_pixel(x+h , y+k)
+        plotter.plot_pixel(y+h , x+k)
+        plotter.plot_pixel(-y+h, x+k)
+        plotter.plot_pixel(-x+h, y+k)
+        plotter.plot_pixel(-x+h, -y+k)
+        plotter.plot_pixel(-y+h, -x+k)
+        plotter.plot_pixel(y+h, -x+k)
+        plotter.plot_pixel(x+h, -y+k)
 
         if(d < 0):
             d = d + 4*x + 6
@@ -23,10 +23,11 @@ def drawCircle(drawer, r, h, k):
             d = d + d*(x - y) + 10
             x = x + 1
             y = y - 1
-app = pixeldrawer.PixelDrawer()
-app.start()
-drawCircle(app, 7, 20, 20)
-app.execute()
+            
+plotter = pixelplotter.PixelPlotter()
+plotter.start()
+drawCircle(plotter, 7, 20, 10)
+plotter.execute()
 
         
 

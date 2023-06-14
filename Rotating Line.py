@@ -1,9 +1,9 @@
-from pixelplotter import pixeldrawer
-import mydrawer
+from pixelvisualizer import pixelplotter
+from pixelvisualizer import drawer
 import math
 
 
-plotter = pixeldrawer.PixelDrawer()
+plotter = pixelplotter.PixelPlotter()
 PI = math.acos(-1.0)
 
 def rotateLine(x, y, theta):
@@ -15,11 +15,11 @@ def rotateLine(x, y, theta):
 
 plotter.start()
 x1, y1, x2, y2 = 0, 0, 0, 15
-mydrawer.draw_bresenhams_line(plotter, x1, y1, x2, y2)
+drawer.draw_bresenhams_line(plotter, x1, y1, x2, y2)
 
 x2, y2 = rotateLine(x2, y2, 30)
 
-mydrawer.draw_bresenhams_line(plotter, x1, y1, x2, y2)
+drawer.draw_bresenhams_line(plotter, x1, y1, x2, y2, plotter.RED)
 
 plotter.execute()
 

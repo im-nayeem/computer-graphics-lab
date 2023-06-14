@@ -1,5 +1,5 @@
-from pixelplotter import pixeldrawer
-import mydrawer
+from pixelvisualizer import pixelplotter
+from pixelvisualizer import drawer as mydrawer
 
 def drawFlag(drawer, length):
     # Assign minimum length
@@ -12,16 +12,16 @@ def drawFlag(drawer, length):
     k = round(width / 2)
     r = round(length / 5)
 
-    mydrawer.draw_line(drawer, 0, 0, length, 0)
-    mydrawer.draw_line(drawer, 0, width, length, width)
-    mydrawer.draw_line(drawer, 0, 0, 0, width)
-    mydrawer.draw_line(drawer, length, 0, length, width)
+    mydrawer.draw_bresenhams_line(drawer, 0, 0, length, 0)
+    mydrawer.draw_bresenhams_line(drawer, 0, width, length, width)
+    mydrawer.draw_bresenhams_line(drawer, 0, 0, 0, width)
+    mydrawer.draw_bresenhams_line(drawer, length, 0, length, width)
     mydrawer.draw_bresenhams_circle(drawer, r, h, k)
 
 
-drawer = pixeldrawer.PixelDrawer()
+drawer = pixelplotter.PixelPlotter()
 drawer.start()
-drawFlag(drawer, 27git )
+drawFlag(drawer, 27)
 drawer.execute()
 
 
