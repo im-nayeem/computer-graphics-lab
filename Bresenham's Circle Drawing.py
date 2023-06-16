@@ -23,10 +23,21 @@ def drawCircle(plotter, r, h, k):
             d = d + d*(x - y) + 10
             x = x + 1
             y = y - 1
-            
+
+
+def takeInput():
+    h, k = map(int, input('Enter coordinate of center (h, k): ').split())
+    r = int(input('Enter radius of circle, r: '))
+    return (r, h, k)
+
+# Main Section
+r, h, k = takeInput()
+
 plotter = pixelplotter.PixelPlotter()
 plotter.start()
-drawCircle(plotter, 7, 20, 10)
+
+drawCircle(plotter, r, h, k)
+
 plotter.execute()
 
         

@@ -6,10 +6,10 @@ def scaleTriangle(x1, y1, x2, y2, x3, y3, Sx, Sy):
     return (x1, y1, x2, y2, x3, y3)
 
 def takeInput():
-    x1, y1 = map(int, input('Enter coordinate (x1,y1): ').split())
-    x2, y2 = map(int, input('Enter coordinate (x2,y2): ').split())
-    x3, y3 = map(int, input('Enter coordinate (x3,y3): ').split())
-    Sx, Sy = map(int, input('Enter scaling factor (Sx,Sy): ').split())
+    x1, y1 = map(int, input('Enter coordinate (x1, y1): ').split())
+    x2, y2 = map(int, input('Enter coordinate (x2, y2): ').split())
+    x3, y3 = map(int, input('Enter coordinate (x3, y3): ').split())
+    Sx, Sy = map(int, input('Enter scaling factor (Sx, Sy): ').split())
     return (x1, y1, x2, y2, x3, y3, Sx, Sy)
 
 

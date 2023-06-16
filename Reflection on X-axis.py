@@ -6,9 +6,9 @@ def reflectTriangle(x1, y1, x2, y2, x3, y3):
     return (x1, y1, x2, y2, x3, y3)
  
 def takeInput():
-    x1, y1 = map(int, input('Enter coordinate (x1,y1): ').split())
-    x2, y2 = map(int, input('Enter coordinate (x2,y2): ').split())
-    x3, y3 = map(int, input('Enter coordinate (x3,y3): ').split())
+    x1, y1 = map(int, input('Enter coordinate (x1, y1): ').split())
+    x2, y2 = map(int, input('Enter coordinate (x2, y2): ').split())
+    x3, y3 = map(int, input('Enter coordinate (x3, y3): ').split())
     return (x1, y1, x2, y2, x3, y3)
 
 

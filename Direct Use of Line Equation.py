@@ -22,6 +22,7 @@ def drawLine(x1, y1, x2, y2):
         if(x > xend):
             break
 
+# Main Section
 x1 , y1 = map(int, input('Enter x1 and y1: ' ).split())
 x2 , y2 = map(int, input('Enter x2 and y2: ' ).split())
 

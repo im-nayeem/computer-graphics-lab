@@ -1,7 +1,7 @@
 from pixelvisualizer import pixelplotter
-from pixelvisualizer import drawer as mydrawer
+from pixelvisualizer import drawer
 
-def drawFlag(drawer, length):
+def drawFlag(plotter, length):
     # Assign minimum length
     if(length < 10):
         length = 10
@@ -12,17 +12,19 @@ def drawFlag(drawer, length):
     k = round(width / 2)
     r = round(length / 5)
 
-    mydrawer.draw_bresenhams_line(drawer, 0, 0, length, 0)
-    mydrawer.draw_bresenhams_line(drawer, 0, width, length, width)
-    mydrawer.draw_bresenhams_line(drawer, 0, 0, 0, width)
-    mydrawer.draw_bresenhams_line(drawer, length, 0, length, width)
-    mydrawer.draw_bresenhams_circle(drawer, r, h, k)
+    drawer.draw_bresenhams_line(plotter, 0, 0, length, 0, plotter.GREEN)
+    drawer.draw_bresenhams_line(plotter, 0, width, length, width, plotter.GREEN)
+    drawer.draw_bresenhams_line(plotter, 0, 0, 0, width, plotter.GREEN)
+    drawer.draw_bresenhams_line(plotter, length, 0, length, width, plotter.GREEN)
+    drawer.draw_bresenhams_circle(plotter, r, h, k, plotter.RED)
 
 
-drawer = pixelplotter.PixelPlotter()
-drawer.start()
-drawFlag(drawer, 27)
-drawer.execute()
+# Main Section
+l = int(input('Enter the length(>=10) of flag: '))
+plotter = pixelplotter.PixelPlotter()
+plotter.start()
+drawFlag(plotter, l)
+plotter.execute()
 
 
 

@@ -1,33 +1,27 @@
 from pixelvisualizer import pixelplotter
+from pixelvisualizer import drawer
 
-def translate(plotter, coordinates, tx, ty):
-    for item in coordinates:
-        item['x'] = item['x'] + tx
-        item['y'] = item['y'] + ty
-        plotter.plot_pixel(item['x'], item['y'], plotter.RED)
+def translate(x1, y1, x2, y2, tx, ty):
+    return (x1+tx, y1+ty, x2+tx, y2+ty)
 
 
-     
-def main():
-    # List containing the coordinates
-    coordinates = [{'x':1, 'y':4}, {'x':2, 'y':4}, 
-                   {'x':3, 'y':4}, {'x':4, 'y':4},
-                   {'x':5, 'y':4}, {'x':4, 'y':5},
-                   {'x':2, 'y':5}, {'x':3, 'y':5}, {'x':3, 'y':6}]
-    
-    # translation vector [tx, ty]
-    tx, ty = 5, 8 
+def takeInput():
+    x1, y1 = map(int, input('Enter coordinate (x1, y1): ').split())
+    x2, y2 = map(int, input('Enter coordinate (x2, y2): ').split())
+    tx, ty = map(int, input('Enter translation vector (tx, ty): ').split())
+    return (x1, y1, x2, y2, tx, ty)
 
-    plotter = pixelplotter.PixelPlotter()
-    plotter.start()
 
-    # Before Translation
-    for item in coordinates:
-        plotter.plot_pixel(item['x'], item['y'])
+# Main Section
+x1, y1, x2, y2,tx, ty = takeInput()
 
-    # After Translation
-    translate(plotter, coordinates, tx, ty)
-    
-    plotter.execute()
+plotter = pixelplotter.PixelPlotter()
+plotter.start()
 
-main()
+drawer.draw_bresenhams_line(plotter, x1, y1, x2, y2)
+
+x1, y1, x2, y2 = translate(x1, y1, x2, y2, tx, ty)
+
+drawer.draw_bresenhams_line(plotter, x1, y1, x2, y2)
+
+plotter.execute()

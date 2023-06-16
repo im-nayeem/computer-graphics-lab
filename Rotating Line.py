@@ -10,8 +10,8 @@ def rotateLine(x, y, theta):
     return (round(x_new), round(y_new))
 
 def takeInput():
-    x1, y1 = map(int, input('Enter coordinate (x1,y1): ').split())
-    x2, y2 = map(int, input('Enter coordinate (x2,y2): ').split())
+    x1, y1 = map(int, input('Enter coordinate (x1, y1): ').split())
+    x2, y2 = map(int, input('Enter coordinate (x2, y2): ').split())
     theta = int(input('Enter angle of rotation in degree: '))
     return (x1, y1, x2, y2, theta)
 
