@@ -20,13 +20,8 @@ def drawFlag(plotter, length):
 
 
 # Main Section
-l = int(input('Enter the length(>=10) of flag: '))
+l = int(input('Enter the length(greater than or equal to 10) of flag: '))
 plotter = pixelplotter.PixelPlotter()
 plotter.start()
 drawFlag(plotter, l)
 plotter.execute()
-
-
-
-    
-

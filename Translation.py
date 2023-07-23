@@ -17,11 +17,10 @@ x1, y1, x2, y2,tx, ty = takeInput()
 
 plotter = pixelplotter.PixelPlotter()
 plotter.start()
-
+# Before Translation
 drawer.draw_bresenhams_line(plotter, x1, y1, x2, y2)
-
+# Translation 
 x1, y1, x2, y2 = translate(x1, y1, x2, y2, tx, ty)
-
+# After Translation
 drawer.draw_bresenhams_line(plotter, x1, y1, x2, y2)
-
 plotter.execute()

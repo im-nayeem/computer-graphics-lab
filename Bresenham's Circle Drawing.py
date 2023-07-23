@@ -37,9 +37,4 @@ plotter = pixelplotter.PixelPlotter()
 plotter.start()
 
 drawCircle(plotter, r, h, k)
-
 plotter.execute()
-
-        
-
-

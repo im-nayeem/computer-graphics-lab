@@ -14,19 +14,17 @@ def drawLine(plotter, x1, y1, x2, y2):
     x = x1
     y = y1
 
-    while(x*x_flag <= x2*x_flag):
+    while(x * x_flag <= x2 * x_flag):
         plotter.plot_pixel(round(x), round(y))
         x = x + xinc
         y = y + yinc
-        if(y*y_flag > y2*y_flag):
+        if(y * y_flag > y2 * y_flag):
             break
-
 
 def takeInput():
     x1, y1 = map(int, input('Enter coordinate (x1, y1): ').split())
     x2, y2 = map(int, input('Enter coordinate (x2, y2): ').split())
     return (x1, y1, x2, y2)
-
 
 # Main Section
 x1, y1, x2, y2 = takeInput()
@@ -36,5 +34,4 @@ plotter.start()
 
 drawLine(plotter, x1, y1, x2, y2)
 plotter.execute()
-
 

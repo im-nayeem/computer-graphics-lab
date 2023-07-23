@@ -12,21 +12,19 @@ def takeInput():
     Sx, Sy = map(int, input('Enter scaling factor (Sx, Sy): ').split())
     return (x1, y1, x2, y2, x3, y3, Sx, Sy)
 
-
 # Main Section
 x1, y1, x2, y2, x3, y3, Sx, Sy = takeInput()
 
 plotter = pixelplotter.PixelPlotter()
 plotter.start()
-
+# Before Scaling
 drawer.draw_bresenhams_line(plotter, x1, y1, x2, y2)
 drawer.draw_bresenhams_line(plotter, x3, y3, x2, y2)
 drawer.draw_bresenhams_line(plotter, x1, y1, x3, y3)
-
+# Scale Triangle
 x1, y1, x2, y2, x3, y3 = scaleTriangle(x1, y1, x2, y2, x3, y3, Sx, Sy)
-
+# After Scaling
 drawer.draw_bresenhams_line(plotter, x1, y1, x2, y2, plotter.GREEN)
 drawer.draw_bresenhams_line(plotter, x3, y3, x2, y2, plotter.GREEN)
 drawer.draw_bresenhams_line(plotter, x1, y1, x3, y3, plotter.GREEN)
-
 plotter.execute()

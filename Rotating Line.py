@@ -21,13 +21,10 @@ x1, y1, x2, y2, theta = takeInput()
 
 plotter = pixelplotter.PixelPlotter()
 plotter.start()
-
+# Before Rotation
 drawer.draw_bresenhams_line(plotter, x1, y1, x2, y2)
-
+# Rotate
 x2, y2 = rotateLine(x2, y2, theta)
-
+# After Rotation
 drawer.draw_bresenhams_line(plotter, x1, y1, x2, y2, plotter.RED)
-
 plotter.execute()
-
-    

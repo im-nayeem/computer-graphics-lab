@@ -18,16 +18,14 @@ x1, y1, x2, y2, x3, y3 = takeInput()
 
 plotter = pixelplotter.PixelPlotter()
 plotter.start()
-
-drawer.draw_bresenhams_line(plotter, x1, y1, x2, y2)
-drawer.draw_bresenhams_line(plotter, x2, y2, x3, y3)
-drawer.draw_bresenhams_line(plotter, x3, y3, x1, y1)
-
-x1, y1, x2, y2, x3, y3 = reflectTriangle(x1, y1, x2, y2, x3, y3)
-
+# Before Reflection
 drawer.draw_bresenhams_line(plotter, x1, y1, x2, y2, plotter.RED)
-drawer.draw_bresenhams_line(plotter, x2, y2, x3, y3, plotter.RED)
-drawer.draw_bresenhams_line(plotter, x3, y3, x1, y1, plotter.RED)
-
+drawer.draw_bresenhams_line(plotter, x2, y2, x3, y3, plotter.BLUE)
+drawer.draw_bresenhams_line(plotter, x3, y3, x1, y1)
+# Reflect Triangle
+x1, y1, x2, y2, x3, y3 = reflectTriangle(x1, y1, x2, y2, x3, y3)
+# After Reflection
+drawer.draw_bresenhams_line(plotter, x1, y1, x2, y2, plotter.RED)
+drawer.draw_bresenhams_line(plotter, x2, y2, x3, y3, plotter.BLUE)
+drawer.draw_bresenhams_line(plotter, x3, y3, x1, y1)
 plotter.execute()
-
