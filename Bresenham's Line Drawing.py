@@ -11,7 +11,7 @@ def bresenhamsLineDrawing(plotter, x1, y1, x2, y2):
     if(m < 1):
         c1 = 2 * dy
         c2 = 2 * (dy - dx)
-        p = c1 - dy
+        p = c1 - dx
     else:
         c1 = 2 * dx
         c2 = 2 * (dx - dy)

@@ -20,7 +20,7 @@ def drawCircle(plotter, r, h, k):
             x = x+1
             y = y
         else:
-            p = p + p*(x - y) + 5
+            p = p + 2*(x - y) + 5
             x = x + 1
             y = y - 1
 
